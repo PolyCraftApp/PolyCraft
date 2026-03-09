@@ -1,0 +1,157 @@
+/* Docs page styles */
+.docs-page {
+  min-height: 100vh;
+  background: var(--color-bg);
+  padding: 3rem 0;
+}
+
+.docs-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.docs-header h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: var(--color-text);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.04em;
+}
+
+.docs-header p {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.docs-section {
+  margin-bottom: 4rem;
+}
+
+.docs-section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.625rem;
+  letter-spacing: -0.02em;
+}
+
+.docs-section > p {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.code-example {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.code-example h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}
+
+.code-example p {
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.code-block {
+  background: #0d0d0d;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.code-block pre {
+  margin: 0;
+  padding: 1rem 1.25rem;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.code-block pre[class*="language-"] {
+  background: #0d0d0d !important;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  border-radius: 8px;
+}
+
+.function-list {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.function-item {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: border-color 0.2s ease;
+}
+
+.function-item:hover {
+  border-color: var(--color-border-2);
+}
+
+.function-item h3 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-bottom: 0.375rem;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+.function-item p {
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+}
+
+.best-practices {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  list-style: none;
+}
+
+.best-practices li {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 0.625rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.best-practices li::before {
+  content: "✓";
+  color: var(--color-accent);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+@media (max-width: 768px) {
+  .docs-page { padding: 2rem 0; }
+  .docs-header { margin-bottom: 2rem; padding-bottom: 2rem; }
+  .docs-section { margin-bottom: 2rem; }
+  .code-example, .function-item { padding: 1.25rem; }
+  .code-block pre { font-size: 0.78rem; }
+}
