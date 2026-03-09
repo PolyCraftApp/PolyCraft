@@ -2,7 +2,6 @@ import React from 'react';
 import { WalletMultiButton } from './WalletProvider';
 import { useWallet } from '@solana/wallet-adapter-react';
 import logo from '/assets/maillogor.png';
-import pumpIcon from '/assets/pump.png';
 
 interface NavbarProps {
   onNavClick: (page: string) => void;
@@ -22,14 +21,6 @@ const Navbar: React.FC<NavbarProps> = ({ onNavClick, onCopyCA, contractAddress, 
     onNavClick('create');
   };
 
-  const handlePumpFunClick = (e: React.MouseEvent) => {
-    if (!contractAddress) {
-      e.preventDefault();
-      onShowToast('🚀 Token will be launched soon!');
-    }
-  };
-
-  const pumpFunHref = contractAddress ? `https://pump.fun/coin/${contractAddress}` : '#';
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -62,20 +53,15 @@ const Navbar: React.FC<NavbarProps> = ({ onNavClick, onCopyCA, contractAddress, 
                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                   </svg>
                 </a>
-                <a href={pumpFunHref} target="_blank" rel="noopener noreferrer" className={`social-link ${!contractAddress ? 'disabled' : ''}`} title={contractAddress ? "Pump.fun" : "Token will be launched soon"} onClick={handlePumpFunClick}>
-                  <img src={pumpIcon} alt="Pump.fun" width="20" height="20" />
-                </a>
               </div>
-              <div className="navbar-ca" onClick={onCopyCA} title={contractAddress ? "Click to copy contract address" : "Contract address not available yet"}>
-                <span className="ca-label">CA:</span>
-                <span className={`ca-address ${!contractAddress ? 'ca-placeholder' : ''}`}>
-                  &nbsp;
-                  {contractAddress ? 
-                    (contractAddress.length > 10 ? `${contractAddress.slice(0, 4)}...${contractAddress.slice(-4)}` : contractAddress) :
-                    "Will be added soon"
-                  }
-                </span>
-              </div>
+              <a
+                href="https://x.com/PolyCraftApp"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="navbar-ca"
+              >
+                <span className="ca-label">CA: Watch in X</span>
+              </a>
               <WalletMultiButton />
             </div>
       </div>

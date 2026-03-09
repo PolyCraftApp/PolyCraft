@@ -133,18 +133,18 @@
   align-items: center;
   gap: 0.375rem;
   padding: 0.375rem 0.75rem;
-  background: var(--color-surface-2);
-  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-2);
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.2s ease;
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  color: var(--color-text-muted);
+  color: var(--color-text);
 }
 
 .navbar-ca:hover {
-  background: var(--color-surface);
+  background: var(--color-surface-2);
   border-color: var(--color-border-2);
   color: var(--color-text);
 }

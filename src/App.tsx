@@ -9,7 +9,6 @@ import Prism from 'prismjs'
 import 'prismjs/components/prism-python'
 import 'prismjs/themes/prism-tomorrow.css'
 const logo = '/assets/maillogor.png'
-const pumpIcon = '/assets/pump.png'
 
 function App() {
   const [toast, setToast] = useState({ message: '', isVisible: false });
@@ -90,15 +89,6 @@ function App() {
       console.error('Error fetching contract address:', error);
     }
   };
-
-  const handlePumpFunClick = (e: React.MouseEvent) => {
-    if (!contractAddress) {
-      e.preventDefault();
-      showToast('🚀 Token will be released soon!');
-    }
-  };
-
-  const pumpFunHref = contractAddress ? `https://pump.fun/coin/${contractAddress}` : '#';
 
   // Handle navigation
   const handleNavClick = (page: string) => {
@@ -419,24 +409,19 @@ else:
                         </svg>
                         X (Twitter)
                       </a>
-                      <a href={pumpFunHref} target="_blank" rel="noopener noreferrer" className={`footer-link ${!contractAddress ? 'disabled' : ''}`} onClick={handlePumpFunClick} title={contractAddress ? "Pump.fun" : "Token will be launched soon"}>
-                        <img src={pumpIcon} alt="Pump.fun" width="16" height="16" />
-                        Pump.fun
-                      </a>
                     </div>
                   </div>
                   
                   <div className="footer-section">
                     <h4>Contract Address</h4>
-                    <div className="contract-address" onClick={handleCopyCA} title={contractAddress ? "Click to copy contract address" : "Contract address not available yet"}>
-                      <span className="ca-label">CA: </span>
-                      <span className={`contract-text ${!contractAddress ? 'ca-placeholder' : ''}`}>{contractAddress || "Will be added soon"}</span>
-                      {contractAddress && (
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
-                        </svg>
-                      )}
-                    </div>
+                    <a
+                      href="https://x.com/PolyCraftApp"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="contract-address"
+                    >
+                      <span className="ca-label">CA: Watch in X</span>
+                    </a>
                   </div>
                 </div>
               </div>
