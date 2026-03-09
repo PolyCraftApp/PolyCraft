@@ -380,7 +380,7 @@ else:
 
       return (
         <div className="app">
-          <Navbar onNavClick={handleNavClick} onCopyCA={handleCopyCA} contractAddress={contractAddress} onShowToast={showToast} />
+          <Navbar onNavClick={handleNavClick} onShowToast={showToast} />
           {renderPage()}
           <footer className="footer">
             <div className="container">

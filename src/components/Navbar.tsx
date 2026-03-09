@@ -5,12 +5,10 @@ import logo from '/assets/maillogor.png';
 
 interface NavbarProps {
   onNavClick: (page: string) => void;
-  onCopyCA: () => void;
-  contractAddress: string;
   onShowToast: (message: string) => void;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ onNavClick, onCopyCA, contractAddress, onShowToast }) => {
+const Navbar: React.FC<NavbarProps> = ({ onNavClick, onShowToast }) => {
   const { connected } = useWallet();
 
   const handleCreateClick = () => {
